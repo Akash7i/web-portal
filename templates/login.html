@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: rgba(255, 234, 148, 0.1);
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .login-container {
+            background: white;
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 350px;
+            max-width: 90%;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px 10px 10px 35px;  /* Increased left padding (35px) to create space */
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 10px;
+            color: #c9a66a;
+            font-size: 20px;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #c9a66a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Student Login</h2>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <form method="POST">
+            <div class="input-group">
+                <i class='bx bx-user'></i>
+                <input type="text" name="reg_no" placeholder="Enter Register Number" required>
+            </div>
+            <div class="input-group">
+                <i class='bx bx-calendar'></i>
+                <input type="date" name="dob" placeholder="Enter Date of Birth" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+    </div>
+</body>
+</html>
